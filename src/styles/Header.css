@@ -33,3 +33,13 @@
 	color: #FFFFFF;
 	cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .header-cont {
+		box-sizing: border-box;
+		padding: 20px;
+	}
+	.list-ul {
+		display: none;
+	}
+}

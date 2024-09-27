@@ -99,3 +99,40 @@
 	cursor: pointer;
 	background-color: #d69335;
 }
+
+@media (max-width: 480px) {
+  .first-block h2 {
+		font-size: 90px;
+		text-align: center;
+	}
+	.first-block {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.first-block p {
+		width: 90%;
+		margin: auto;
+		font-size: 25px;
+		text-align: center;
+	}
+	.second-block {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.second-block-left-p1 {
+		font-size: 24px;
+		text-align: center;
+	}
+	.second-block-left-p2 {
+    font-size: 24px;
+		text-align: center;
+	}
+	.fourth-block {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 15px;
+	}
+	.fourth-block button {
+		width: 80%;
+	}
+}
