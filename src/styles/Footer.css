@@ -1,0 +1,21 @@
+.footer-cont {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px;
+}
+.footer-cont-left {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.footer-cont-left p {
+	font-family: 'This Is The Future', sans-serif;
+	font-size: 75px;
+	font-weight: 700;
+	margin: 0;
+	letter-spacing: 12px;
+}
+.footer-cont-p {
+	font-size: 20px;
+	font-weight: 400;
+}

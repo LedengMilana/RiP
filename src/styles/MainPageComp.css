@@ -1,0 +1,101 @@
+.first-block {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0 0 0;
+}
+.first-block h2 {
+	font-family: 'This Is The Future', sans-serif;
+	font-size: 175px;
+	font-weight: 700;
+	margin: 0;
+	letter-spacing: 20px;
+}
+.first-block p {
+	width: 50%;
+	font-size: 35px;
+	font-weight: 400;
+}
+.second-block {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.second-block-left {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.img-second-block {
+	width: 50%;
+}
+.second-block-left-p1 {
+	font-size: 35px;
+	font-weight: 400;
+}
+.second-block-left-p2 {
+	font-size: 35px;
+	font-weight: 900;
+}
+.third-block {
+	width: 70%;
+	margin: 30px auto;
+	background-color: #B9E937;
+	border-radius: 10px;
+	text-align: center;
+	padding: 30px 0 20px 0;
+}
+.third-block h2 {
+	font-size: 35px;
+	font-weight: 900;
+	margin: 0;
+	background-color: #FFFFFF;
+}
+.third-block p {
+	font-size: 18px;
+	font-weight: 400;
+	width: 70%;
+	margin: 15px auto;
+}
+.fourth-block {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+.fourth-block button {
+	width: 32%;
+	border: 2px solid #000000;
+	border-radius: 15px;
+	background-color: transparent;
+	padding-top: 10px;
+}
+.fourth-block button:hover {
+	cursor: pointer;
+}
+.fourth-block button img {
+	height: 290px;
+}
+.fourth-block button p {
+	font-size: 35px;
+	font-weight: 900;
+	margin: 10px;
+}
+.fifth-block {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 0 0 70px 0;
+}
+.btn-for-add {
+	background-color: #F3A73A;
+	padding: 17px 50px;
+	font-size: 24px;
+	font-weight: 400;
+	border-radius: 15px;
+	border: 0;
+}
+.btn-for-add:hover {
+	cursor: pointer;
+	background-color: #d69335;
+}
