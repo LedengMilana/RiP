@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import ErrorPage from './pages/error-page';
 import store from './app/store';
 import Catalog from './pages/Catalog';
-import Account from './pages/Account';
+import AddPost from './pages/AddPost';
 
 
 const router = createBrowserRouter([
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />,
   },
 	{
-    path: "/account",
-    element: <Account />,
+    path: "/add-post",
+    element: <AddPost />,
 		errorElement: <ErrorPage />,
   },
 ]);

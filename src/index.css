@@ -21,9 +21,3 @@ code {
 	width: 80%;
 	margin: auto;
 }
-
-@media (max-width: 480px) {
-  .wrapper {
-		width: 100%;
-	}
-}

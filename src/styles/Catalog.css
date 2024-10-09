@@ -1,0 +1,139 @@
+/* кастомный чекбокс */
+.custom-checkbox-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #181D25;
+}
+
+.custom-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 4px;
+  height: 8px;
+  border: solid #181D25;
+	border-radius: 1px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* кастомные ползунки */
+.range-slider {
+  width: 400px;
+  position: relative;
+}
+
+input[type="range"] {
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #243042;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type="range"].thumb--left {
+  z-index: 3;
+}
+
+input[type="range"].thumb--right {
+  z-index: 4;
+}
+
+.slider {
+  position: relative;
+  height: 5px;
+  margin-top: 10px;
+  background-color: #ddd;
+}
+
+.slider__track,
+.slider__range {
+	position: absolute;
+  height: 100%;
+}
+
+.slider__track {
+	width: 100%;
+	border-radius: 10px !important;
+  background-color: #E0E5EB;
+}
+
+.slider__range {
+  background-color: #243042;
+}
+
+.slider-values {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 35px 0;
+}
+
+.slider-value {
+  position: absolute;
+  font-size: 14px;
+  color: #000;
+  transform: translateX(-50%);
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.input-box {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+	outline: none;
+}

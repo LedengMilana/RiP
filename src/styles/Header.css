@@ -7,6 +7,9 @@
 	justify-content: space-between;
 	align-items: center;
 }
+.header-cont-img {
+	width: 50px;
+}
 .list-ul {
 	list-style-type: none;
 	display: flex;

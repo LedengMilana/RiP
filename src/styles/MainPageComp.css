@@ -2,18 +2,19 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: 50px 0 0 0;
 }
-.first-block h2 {
+.first-block div h2 {
 	font-family: 'This Is The Future', sans-serif;
-	font-size: 175px;
+	font-size: 135px;
 	font-weight: 700;
 	margin: 0;
 	letter-spacing: 20px;
 }
-.first-block p {
-	width: 50%;
-	font-size: 35px;
+.first-block div p {
+	width: 90%;
+	font-size: 24px;
 	font-weight: 400;
 }
 .second-block {
@@ -46,7 +47,8 @@
 	padding: 30px 0 20px 0;
 }
 .third-block h2 {
-	font-size: 35px;
+	font-size: 24px;
+	padding: 10px 0;
 	font-weight: 900;
 	margin: 0;
 	background-color: #FFFFFF;
@@ -77,9 +79,13 @@
 	height: 290px;
 }
 .fourth-block button p {
-	font-size: 35px;
+	font-size: 24px;
 	font-weight: 900;
 	margin: 10px;
+	color: #000000;
+}
+.fourth-block-a {
+	text-decoration: none;
 }
 .fifth-block {
 	width: 100%;
@@ -89,8 +95,8 @@
 }
 .btn-for-add {
 	background-color: #F3A73A;
-	padding: 17px 50px;
-	font-size: 24px;
+	padding: 17px 90px;
+	font-size: 20px;
 	font-weight: 400;
 	border-radius: 15px;
 	border: 0;

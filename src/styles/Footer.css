@@ -1,16 +1,19 @@
 .footer-cont {
 	display: flex;
 	justify-content: space-between;
-	padding: 40px;
+	padding: 15px 40px;
 }
 .footer-cont-left {
 	display: flex;
 	align-items: center;
 	gap: 20px;
 }
+.footer-cont-left img {
+	width: 50px;
+}
 .footer-cont-left p {
 	font-family: 'This Is The Future', sans-serif;
-	font-size: 75px;
+	font-size: 55px;
 	font-weight: 700;
 	margin: 0;
 	letter-spacing: 12px;
