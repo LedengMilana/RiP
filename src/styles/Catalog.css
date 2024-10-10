@@ -1,7 +1,21 @@
+.main-comp {
+	width: 100%;
+	margin-top: 50px;
+}
+.main-comp-filters {
+	width: 25%;
+}
+.btn-clean {
+	width: 100%;
+	margin: 30px 0;
+	background-color: #FFFFFF;
+}
+
 /* кастомный чекбокс */
 .custom-checkbox-group {
   display: flex;
   flex-direction: column;
+	align-items: center;
 }
 
 .custom-checkbox {
@@ -54,7 +68,6 @@
 
 /* кастомные ползунки */
 .range-slider {
-  width: 400px;
   position: relative;
 }
 

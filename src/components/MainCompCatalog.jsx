@@ -9,6 +9,44 @@ export default function MainCompCatalog() {
 	const [selectedOption3, setSelectedOption3] = useState(false);
 	const [selectedOption4, setSelectedOption4] = useState(false);
 	const [selectedOption5, setSelectedOption5] = useState(false);
+	const [] = useState([
+    {
+			"id": 1,
+			'title': 'Пупсик2',
+			'description': 'Милый пупсик',
+			'kind': 'Dog',
+			'breed': 'пуп',
+			'age': 1,
+			'gender': 'M',
+			'location': 'Москва',
+			'price': 16000,
+			'image': 'pups.png'
+    },
+    {
+			"id": 2,
+			'title': 'Собака2',
+			'description': 'Собака',
+			'kind': 'Dog',
+			'breed': 'красивая порода',
+			'age': 4,
+			'gender': 'M',
+			'location': 'Томск',
+			'price': 100,
+			'image': 'cap.jpg'
+    },
+    {
+			"id": 3,
+			'title': 'Пуп2',
+			'description': 'Милая собака',
+			'kind': 'Dog',
+			'breed': 'красивая пуп',
+			'age': 5,
+			'gender': 'F',
+			'location': 'Новосибирск',
+			'price': 16500,
+			'image': 'panda.jpg'
+    }
+	])
 
   const handleOptionChange = () => {
     setSelectedOption(!selectedOption);
@@ -54,54 +92,58 @@ export default function MainCompCatalog() {
 				<div className="main-comp-filters">
 					<h3>Категория</h3>
 					<div className="custom-checkbox-group">
-						<label className="custom-checkbox">
-							<input
-								type="checkbox"
-								checked={selectedOption}
-								onChange={handleOptionChange}
-							/>
-							<span className="checkmark"></span>
-							Кошки
-						</label>
-						<label className="custom-checkbox">
-							<input
-								type="checkbox"
-								checked={selectedOption2}
-								onChange={handleOptionChange2}
-							/>
-							<span className="checkmark"></span>
-							Собаки
-						</label>
-						<label className="custom-checkbox">
-							<input
-								type="checkbox"
-								checked={selectedOption3}
-								onChange={handleOptionChange3}
-							/>
-							<span className="checkmark"></span>
-							Птицы
-						</label>
+						<div>
+							<label className="custom-checkbox">
+								<input
+									type="checkbox"
+									checked={selectedOption}
+									onChange={handleOptionChange}
+								/>
+								<span className="checkmark"></span>
+								Кошки
+							</label>
+							<label className="custom-checkbox">
+								<input
+									type="checkbox"
+									checked={selectedOption2}
+									onChange={handleOptionChange2}
+								/>
+								<span className="checkmark"></span>
+								Собаки
+							</label>
+							<label className="custom-checkbox">
+								<input
+									type="checkbox"
+									checked={selectedOption3}
+									onChange={handleOptionChange3}
+								/>
+								<span className="checkmark"></span>
+								Птицы
+							</label>
+						</div>
 					</div>
 					<h3>Пол</h3>
 					<div className="custom-checkbox-group">
-						<label className="custom-checkbox">
-							<input
-								type="checkbox"
-								checked={selectedOption4}
-								onChange={handleOptionChange4}
-							/>
-							<span className="checkmark"></span>
-							Мальчик
-						</label>
-						<label className="custom-checkbox">
-							<input
-								type="checkbox"
-								checked={selectedOption5}
-								onChange={handleOptionChange5}
-							/>
-							<span className="checkmark"></span>
-							Девочка
-						</label>
+						<div>
+							<label className="custom-checkbox">
+								<input
+									type="checkbox"
+									checked={selectedOption4}
+									onChange={handleOptionChange4}
+								/>
+								<span className="checkmark"></span>
+								Мальчик
+							</label>
+							<label className="custom-checkbox">
+								<input
+									type="checkbox"
+									checked={selectedOption5}
+									onChange={handleOptionChange5}
+								/>
+								<span className="checkmark"></span>
+								Девочка
+							</label>
+						</div>
 					</div>
 					<h3>Цена</h3>
 					<div className="range-slider">
@@ -156,10 +198,10 @@ export default function MainCompCatalog() {
 							/>
 						</div>
 					</div>
-
+					<button className='header-btn-signin btn-clean'>Очистить фильтр</button>
 				</div>
 				<div className="main-comp-right">
-
+					
 				</div>
 			</div>
 		</>
