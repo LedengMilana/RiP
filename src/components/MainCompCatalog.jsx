@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../styles/Catalog.css"
 import img1 from "../assets/catalog-cat1.png"
 import img2 from "../assets/catalog-cat2.png"
 import img3 from "../assets/catalog-cat3.png"
+import axios from 'axios'
 
 export default function MainCompCatalog() {
 	const [minValue, setMinValue] = useState(100);
@@ -122,6 +123,16 @@ export default function MainCompCatalog() {
 	])
 	const [arrOfImg, setArrOfImg] = useState([img1, img2, img3, img1, img2, img3, img1, img2, img3])
 	const [filteredAnimals, setFilteredAnimals] = useState(animals);
+
+	useEffect(()=>{
+		axios.get('http://0.0.0.0:8000/api/v1/execute')
+      .then(response => {
+        setFilteredAnimals(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+	}, [])
 
   const handleCategoryChange = (category) => {
     const updatedCategories = selectedCategory.includes(category)
