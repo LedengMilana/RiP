@@ -2,14 +2,14 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer';
 import "../styles/Catalog.css"
-import MainAddComp from '../components/MainAddComp';
+import MainAddCompNext from '../components/MainAddCompNext';
 
-export default function AddPost() {
+export default function AddPostNext() {
 	return (
 		<>
 			<div className="wrapper">
 				<Header></Header>
-				<MainAddComp></MainAddComp>
+				<MainAddCompNext></MainAddCompNext>
 			</div>
 			<hr />
 			<div className="wrapper">

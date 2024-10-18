@@ -11,6 +11,7 @@ import ErrorPage from './pages/error-page';
 import store from './app/store';
 import Catalog from './pages/Catalog';
 import AddPost from './pages/AddPost';
+import AddPostNext from './pages/AddPostNext';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
     element: <AddPost />,
 		errorElement: <ErrorPage />,
   },
+	{
+		path: "/add-post/check",
+		element: <AddPostNext />,
+		errorElement: <ErrorPage />,
+	}
 ]);
 
 

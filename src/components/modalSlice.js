@@ -3,16 +3,36 @@ import { createSlice } from '@reduxjs/toolkit'
 export const modalSlice = createSlice({
   name: 'modal',
   initialState: {
-    value: "",
+    title: '',
+    description: '',
+    kind: 'Dog',
+    breed: '',
+    age: '',
+    gender: 'M',
+    location: '',
+    price: '',
+    image: '',
   },
   reducers: {
-    setImage: (state, action) => {
-      state.value = action.payload
-			console.log(state.value);
+    setFormData: (state, action) => {
+      return { ...state, ...action.payload };
+    },
+    resetFormData: (state) => {
+      return {
+        title: '',
+        description: '',
+        kind: 'Dog',
+        breed: '',
+        age: '',
+        gender: 'M',
+        location: '',
+        price: '',
+        image: '',
+      };
     },
   },
-})
+});
 
-export const { setImage } = modalSlice.actions
+export const { setFormData, resetFormData } = modalSlice.actions
 
 export default modalSlice.reducer
