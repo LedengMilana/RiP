@@ -359,7 +359,7 @@ export default function MainCompCatalog() {
 						{
 							filteredAnimals.map((item,index)=>(
 								<div className="main-comp-right-bottom-item" key={index}>
-									<img src={`http://l0.0.0.0:8000/media/${item.image}`} alt="" />
+									<img src={`http://0.0.0.0:8000/media/${item.image}`} alt="" />
 									<p className="main-comp-right-bottom-item-p1">{item.price} ₽</p>
 									<p className="main-comp-right-bottom-item-p2">{item.description}</p>
 								</div>
