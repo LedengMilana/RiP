@@ -7,6 +7,8 @@ export default function MainCompProfile() {
 
 	const onExit = () => {
 		localStorage.removeItem("current-user")
+		localStorage.removeItem("access_token")
+		localStorage.removeItem("refresh_token")
 		navigate("/")
 	}
 
