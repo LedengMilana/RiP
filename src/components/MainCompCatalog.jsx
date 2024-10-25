@@ -132,6 +132,7 @@ export default function MainCompCatalog() {
       }
     })
       .then(response => {
+				setAnimals(response.data)
         setFilteredAnimals(response.data);
       })
       .catch(error => {
