@@ -19,9 +19,11 @@ export default function MainAddCompNext() {
 		e.preventDefault();
 	
 		try {
+			const accessToken = localStorage.getItem('access_token');
 			const response = await axios.post('http://0.0.0.0:8000/api/v1/execute', formData, {
 				headers: {
 					'Content-Type': 'application/json',
+					Authorization: `Bearer ${accessToken}`
 				},
 			});
 			console.log('Успешно отправлено:', response.data);

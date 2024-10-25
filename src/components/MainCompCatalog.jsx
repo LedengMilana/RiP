@@ -125,7 +125,12 @@ export default function MainCompCatalog() {
 	const [filteredAnimals, setFilteredAnimals] = useState(animals);
 
 	useEffect(()=>{
-		axios.get('http://0.0.0.0:8000/api/v1/execute')
+		const accessToken = localStorage.getItem('access_token');
+		axios.get('http://0.0.0.0:8000/api/v1/execute', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
       .then(response => {
         setFilteredAnimals(response.data);
       })

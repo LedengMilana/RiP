@@ -30,31 +30,57 @@ export default function SignInModal({ onClose }) {
 	};
 
 	// Функция регистрации
-	const handleSignUp = (values) => {
-		const users = JSON.parse(localStorage.getItem('users')) || [];
-		const userExists = users.some(user => user.email === values.email);
+	const handleSignUp = async (values) => {
+		// const users = JSON.parse(localStorage.getItem('users')) || [];
+		// const userExists = users.some(user => user.email === values.email);
 
-		if (userExists) {
-			alert('Пользователь с таким email уже существует');
-		} else {
-			users.push({ name: values.name, email: values.email, password: values.password });
-			localStorage.setItem('users', JSON.stringify(users));
-			alert('Пользователь зарегистрирован');
-			setIsSignUp(false);
-		}
+		// if (userExists) {
+		// 	alert('Пользователь с таким email уже существует');
+		// } else {
+		// 	users.push({ name: values.name, email: values.email, password: values.password });
+		// 	localStorage.setItem('users', JSON.stringify(users));
+		// 	alert('Пользователь зарегистрирован');
+		// 	setIsSignUp(false);
+		// }
+		try {
+      const response = await axios.post('http://0.0.0.0:8000/api/register/', {
+        username: values.email,
+        password: values.password,
+      });
+      alert('Пользователь зарегистрирован');
+      setIsSignUp(false);
+    } catch (error) {
+      alert('Ошибка регистрации');
+    }
 	};
 
 	// Функция входа
-	const handleSignIn = (values) => {
-		const users = JSON.parse(localStorage.getItem('users')) || [];
-		const user = users.find(user => user.email === values.email && user.password === values.password);
+	const handleSignIn = async (values) => {
+		// const users = JSON.parse(localStorage.getItem('users')) || [];
+		// const user = users.find(user => user.email === values.email && user.password === values.password);
 
-		if (user) {
-			localStorage.setItem('current-user', values.email)
-			navigate('/profile');
-		} else {
-			setSignInError('Неверный логин или пароль');
-		}
+		// if (user) {
+		// 	localStorage.setItem('current-user', values.email)
+		// 	navigate('/profile');
+		// } else {
+		// 	setSignInError('Неверный логин или пароль');
+		// }
+		try {
+      const response = await axios.post('/api/token/', {
+        username: values.email,
+        password: values.password,
+      });
+      
+      const { access, refresh } = response.data;
+
+      localStorage.setItem('access_token', access);
+      localStorage.setItem('refresh_token', refresh);
+      localStorage.setItem('current-user', values.email);
+      
+      navigate('/profile');
+    } catch (error) {
+      setSignInError('Неверный логин или пароль');
+    }
 	};
 
 	return (
