@@ -20,7 +20,7 @@ export default function MainAddComp() {
     gender: reduxFormData.gender || 'M',
     location: reduxFormData.location || '',
     price: reduxFormData.price || '',
-    image: reduxFormData.image || '',
+    image: reduxFormData.image || null,
   });
 
   useEffect(() => {
@@ -33,13 +33,17 @@ export default function MainAddComp() {
       gender: reduxFormData.gender || 'M',
       location: reduxFormData.location || '',
       price: reduxFormData.price || '',
-      image: reduxFormData.image || '',
+      image: reduxFormData.image || null,
     });
   }, [reduxFormData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormDataLocal((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleImageChange = (e) => {
+    setFormDataLocal((prev) => ({ ...prev, image: e.target.files[0] }));
   };
 
   const handleSubmit = (e) => {
@@ -119,7 +123,7 @@ export default function MainAddComp() {
 
 					<div className="add-cont-inner">
 						<label htmlFor="image">Ссылка на изображение</label>
-          	<input type="text" className='inp-for-common inp-long' name="image" id='image' value={formData.image} onChange={handleChange} />
+          	<input type="file" className='inp-for-common inp-long' name="image" id='image' onChange={handleImageChange} />
 					</div>
 					
 

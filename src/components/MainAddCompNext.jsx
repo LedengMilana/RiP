@@ -20,9 +20,21 @@ export default function MainAddCompNext() {
 	
 		try {
 			const accessToken = localStorage.getItem('access_token');
-			const response = await axios.post('http://0.0.0.0:8000/api/v1/execute', formData, {
+			const data = new FormData();
+      data.append('title', formData.title);
+      data.append('description', formData.description);
+      data.append('kind', formData.kind);
+      data.append('breed', formData.breed);
+      data.append('age', formData.age);
+      data.append('gender', formData.gender);
+      data.append('location', formData.location);
+      data.append('price', formData.price);
+      if (formData.image) {
+        data.append('image', formData.image);
+      }
+			const response = await axios.post('http://0.0.0.0:8000/api/v1/execute', data, {
 				headers: {
-					'Content-Type': 'application/json',
+					'Content-Type': 'multipart/form-data',
 					Authorization: `Bearer ${accessToken}`
 				},
 			});
@@ -82,7 +94,7 @@ export default function MainAddCompNext() {
 
 					<div className="add-cont-inner">
 						<label htmlFor="image">Ссылка на изображение</label>
-						{formData.image && <img className='result-img' src={formData.image} alt="" />}
+						{formData.image && <img className='result-img' src={URL.createObjectURL(formData.image)} alt="" />}
 					</div>
 					
 
