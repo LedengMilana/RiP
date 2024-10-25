@@ -4,6 +4,7 @@ import "../styles/Header.css"
 import { NavLink } from 'react-router-dom'
 import SignInModal from './SignInModal';
 import imgProfile from "../assets/profile.svg"
+import axios from 'axios';
 
 export default function Header() {
 

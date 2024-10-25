@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import '../styles/Modal.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const signInSchema = Yup.object().shape({
 	email: Yup.string().email('Неверный формат почты').required('Поле обязательно'),
@@ -43,7 +44,7 @@ export default function SignInModal({ onClose }) {
 		// 	setIsSignUp(false);
 		// }
 		try {
-      const response = await axios.post('http://0.0.0.0:8000/api/register/', {
+      const response = await axios.post('http://0.0.0.0:8000/api/token/', {
         username: values.email,
         password: values.password,
       });
@@ -66,7 +67,7 @@ export default function SignInModal({ onClose }) {
 		// 	setSignInError('Неверный логин или пароль');
 		// }
 		try {
-      const response = await axios.post('/api/token/', {
+      const response = await axios.post('http://0.0.0.0:8000/api/token/', {
         username: values.email,
         password: values.password,
       });
