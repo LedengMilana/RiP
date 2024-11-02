@@ -1,0 +1,25 @@
+.exit-btn {
+	width: fit-content;
+	cursor: pointer;
+	margin-bottom: 50px;
+}
+.ol-links {
+	list-style-type: none;
+	padding: 0;
+	padding-left: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 120px;
+}
+.name {
+	font-size: 24px;
+}
+.links {
+	text-decoration: none;
+	color: #000000;
+	font-size: 18px;
+}
+.orange {
+	color: #F3A73A;
+}

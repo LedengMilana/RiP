@@ -13,7 +13,9 @@ import Catalog from './pages/Catalog';
 import AddPost from './pages/AddPost';
 import AddPostNext from './pages/AddPostNext';
 import Profile from './pages/Profile';
-
+import ProfileFirst from './components/ProfileFirst';
+import ProfileChat from './components/ProfileChat';
+import ProfileAdmin from './components/ProfileAdmin';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,20 @@ const router = createBrowserRouter([
 		path: "/profile",
 		element: <Profile />,
 		errorElement: <ErrorPage />,
+		children: [
+      {
+        path: "first",
+        element: <ProfileFirst />
+      },
+      {
+        path: "chat",
+        element: <ProfileChat />
+      },
+      {
+        path: "chat-admin",
+        element: <ProfileAdmin />
+      }
+    ]
 	}
 ]);
 
