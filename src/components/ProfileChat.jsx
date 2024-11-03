@@ -43,16 +43,18 @@ export default function ProfileChat() {
 
       socket.onmessage = (event) => {
         const messageData = JSON.parse(event.data);
-        setMessages((prevMessages) => {
-					console.log([...prevMessages, messageData]);
-					const temp = [...prevMessages].reverse()
-					return [...temp, messageData]
-				});
+        setMessages((prevMessages) => [...prevMessages, messageData]);
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');
     }
   }, [uuid, roomId]);
+
+	useEffect(() => {
+		setMessages((prevMessages) => {
+				return [...prevMessages].reverse()
+		});
+	}, []);
 
   const sendMessage = () => {
     if (ws && message.trim()) {
