@@ -28,6 +28,10 @@ export default function ProfileChat() {
 					},
 				});
         setRoomId(roomResponse.data.room_name);
+
+				const initialMessages = roomResponse.data.messages || [];
+				console.log(initialMessages);
+				
       } catch (error) {
         console.error('Ошибка при получении uuid или roomId:', error);
       }
