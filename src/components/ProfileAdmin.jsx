@@ -43,7 +43,7 @@ export default function ProfileAdmin() {
 
       socket.onmessage = (event) => {
         const messageData = JSON.parse(event.data);
-        setMessages((prevMessages) => [...prevMessages, messageData]);
+        setMessages((prevMessages) => [...prevMessages, messageData].reverse());
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');
@@ -75,7 +75,7 @@ export default function ProfileAdmin() {
       {selectedChatId && (
         <>
           <div className="chat-window">
-            {messages.reverse().map((msg, index) => (
+            {messages.map((msg, index) => (
               <p className='for-message' key={index}>{msg.message}</p>
             ))}
           </div>

@@ -42,7 +42,7 @@ export default function ProfileChat() {
 
       socket.onmessage = (event) => {
         const messageData = JSON.parse(event.data);
-        setMessages((prevMessages) => [...prevMessages, messageData]);
+        setMessages((prevMessages) => [...prevMessages, messageData].reverse());
 				console.log(messages);
       };
 
@@ -61,7 +61,7 @@ export default function ProfileChat() {
     <div>
       <h2>Чат с техподдержкой</h2>
       <div className="chat-window">
-        {messages.reverse().map((msg, index) => (
+        {messages.map((msg, index) => (
           <p className='for-message' key={index}>{msg.message}</p>
         ))}
       </div>
