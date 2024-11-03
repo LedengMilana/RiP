@@ -11,10 +11,21 @@ export default function ProfileChat() {
   useEffect(() => {
     const fetchUuidAndRoomId = async () => {
       try {
-        const uuidResponse = await axios.get('http://0.0.0.0:8000/api/ws_token/');
+				const accessToken = localStorage.getItem('access_token');
+        const uuidResponse = await axios.get('http://0.0.0.0:8000/api/ws_token/', {
+					headers: {
+						'Content-Type': 'multipart/form-data',
+						Authorization: `Bearer ${accessToken}`
+					},
+				});
         setUuid(uuidResponse.data.uuid);
 
-        const roomResponse = await axios.get('http://0.0.0.0:8000/api/v1/support_chat');
+        const roomResponse = await axios.get('http://0.0.0.0:8000/api/v1/support_chat', {
+					headers: {
+						'Content-Type': 'multipart/form-data',
+						Authorization: `Bearer ${accessToken}`
+					},
+				});
         setRoomId(roomResponse.data.room_name);
       } catch (error) {
         console.error('Ошибка при получении uuid или roomId:', error);
