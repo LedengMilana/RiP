@@ -7,6 +7,7 @@ export default function ProfileChat() {
   const [messages, setMessages] = useState([]);
   const [ws, setWs] = useState(null);
   const [message, setMessage] = useState('');
+	const [orderedMessages, setOrderedMessage] = useState([])
 
   useEffect(() => {
     const fetchUuidAndRoomId = async () => {
@@ -46,7 +47,7 @@ export default function ProfileChat() {
 					console.log([...prevMessages, messageData]);
 					return [messageData, ...prevMessages]
 				});
-				
+				setOrderedMessage([...messages].reverse())
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');
@@ -60,7 +61,7 @@ export default function ProfileChat() {
     }
   };
 
-	const orderedMessages = [...messages].reverse()
+	
 
   return (
     <div>
