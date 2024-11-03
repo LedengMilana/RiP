@@ -61,7 +61,7 @@ export default function ProfileChat() {
     <div>
       <h2>Чат с техподдержкой</h2>
       <div className="chat-window">
-        {messages.map((msg, index) => (
+        {messages.reverse().map((msg, index) => (
           <p className='for-message' key={index}>{msg.message}</p>
         ))}
       </div>

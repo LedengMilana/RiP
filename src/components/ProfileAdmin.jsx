@@ -75,7 +75,7 @@ export default function ProfileAdmin() {
       {selectedChatId && (
         <>
           <div className="chat-window">
-            {messages.map((msg, index) => (
+            {messages.reverse().map((msg, index) => (
               <p className='for-message' key={index}>{msg.message}</p>
             ))}
           </div>

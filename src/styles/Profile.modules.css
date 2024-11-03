@@ -28,6 +28,8 @@
 }
 .btn-for-chat {
 	margin-left: 5px;
+	width: 20%;
+	padding: 7px 4%;
 }
 .for-message {
 	width: fit-content;
