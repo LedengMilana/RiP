@@ -23,3 +23,16 @@
 .orange {
 	color: #F3A73A;
 }
+.inp-for-chat {
+	width: 75%;
+}
+.btn-for-chat {
+	margin-left: 5px;
+}
+.for-message {
+	width: fit-content;
+	background-color: white;
+	padding: 12px;
+	border-radius: 12px 12px 12px 0;
+	border: 1px solid gray;
+}

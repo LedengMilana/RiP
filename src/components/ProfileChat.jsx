@@ -43,6 +43,7 @@ export default function ProfileChat() {
       socket.onmessage = (event) => {
         const messageData = JSON.parse(event.data);
         setMessages((prevMessages) => [...prevMessages, messageData]);
+				console.log(messages);
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');
@@ -61,18 +62,19 @@ export default function ProfileChat() {
       <h2>Чат с техподдержкой</h2>
       <div className="chat-window">
         {messages.map((msg, index) => (
-          <p key={index}>{msg.message}</p>
+          <p className='for-message' key={index}>{msg.message}</p>
         ))}
       </div>
       <div className="message-input">
         <input
           type="text"
           placeholder="Введите сообщение"
+					className='inp-for-common inp-for-chat'
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
         />
-        <button onClick={sendMessage}>Отправить</button>
+        <button className='btn-for-next btn-for-chat' onClick={sendMessage}>Отправить</button>
       </div>
     </div>
   );

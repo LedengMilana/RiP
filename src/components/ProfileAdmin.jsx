@@ -67,8 +67,8 @@ export default function ProfileAdmin() {
       <h2>Чат администрирования</h2>
       <div className="chat-list">
         {chats.map((chat) => (
-          <button key={chat.chat_name} onClick={() => handleSelectChat(chat.chat_name)}>
-            Комната {chat.chat_name} {chat.support_read ? ' (Прочитано)' : ''}
+          <button className='btn-for-next btn-for-chat' key={chat.chat_name} onClick={() => handleSelectChat(chat.chat_name)}>
+            Комната {chat.chat_name}
           </button>
         ))}
       </div>
@@ -76,18 +76,19 @@ export default function ProfileAdmin() {
         <>
           <div className="chat-window">
             {messages.map((msg, index) => (
-              <p key={index}>{msg.message}</p>
+              <p className='for-message' key={index}>{msg.message}</p>
             ))}
           </div>
           <div className="message-input">
             <input
               type="text"
               placeholder="Введите сообщение"
+							className='inp-for-common inp-for-chat'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
             />
-            <button onClick={sendMessage}>Отправить</button>
+            <button className='btn-for-next btn-for-chat' onClick={sendMessage}>Отправить</button>
           </div>
         </>
       )}
