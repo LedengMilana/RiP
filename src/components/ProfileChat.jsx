@@ -66,7 +66,7 @@ export default function ProfileChat() {
       <h2>Чат с техподдержкой</h2>
       <div className="chat-window">
         {messages.map((msg, index) => (
-          <p className='for-message' key={index}>{msg.message}</p>
+          <p className={localStorage.getItem("current-user") == msg.sender ? 'for-message2' : 'for-message'} key={index}>{msg.message}</p>
         ))}
       </div>
       <div className="message-input">

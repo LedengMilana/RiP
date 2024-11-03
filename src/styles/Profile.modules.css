@@ -38,3 +38,10 @@
 	border-radius: 12px 12px 12px 0;
 	border: 1px solid gray;
 }
+.for-message2 {
+	width: fit-content;
+	background-color: gray;
+	padding: 12px;
+	border-radius: 12px 12px 0 12px;
+	border: 1px solid gray;
+}
