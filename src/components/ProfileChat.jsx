@@ -44,7 +44,7 @@ export default function ProfileChat() {
         const messageData = JSON.parse(event.data);
         setMessages((prevMessages) => {
 					console.log([...prevMessages, messageData]);
-					return [...prevMessages, messageData]
+					return [messageData, ...prevMessages]
 				});
 				
       };
@@ -60,11 +60,13 @@ export default function ProfileChat() {
     }
   };
 
+	const orderedMessages = [...messages].reverse()
+
   return (
     <div>
       <h2>Чат с техподдержкой</h2>
       <div className="chat-window">
-        {messages.map((msg, index) => (
+        {orderedMessages.map((msg, index) => (
           <p className='for-message' key={index}>{msg.message}</p>
         ))}
       </div>
