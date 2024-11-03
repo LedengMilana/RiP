@@ -43,7 +43,7 @@ export default function ProfileAdmin() {
 
       socket.onmessage = (event) => {
         const messageData = JSON.parse(event.data);
-        setMessages((prevMessages) => [...prevMessages, messageData].reverse());
+        setMessages((prevMessages) => [...prevMessages, messageData]);
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');

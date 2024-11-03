@@ -42,8 +42,11 @@ export default function ProfileChat() {
 
       socket.onmessage = (event) => {
         const messageData = JSON.parse(event.data);
-        setMessages((prevMessages) => [...prevMessages, messageData].reverse());
-				console.log(messages);
+        setMessages((prevMessages) => {
+					console.log([...prevMessages, messageData]);
+					return [...prevMessages, messageData]
+				});
+				
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');
