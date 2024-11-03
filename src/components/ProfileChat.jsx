@@ -45,9 +45,9 @@ export default function ProfileChat() {
         const messageData = JSON.parse(event.data);
         setMessages((prevMessages) => {
 					console.log([...prevMessages, messageData]);
-					return [messageData, ...prevMessages]
+					const temp = [...prevMessages].reverse()
+					return [...temp, messageData]
 				});
-				setOrderedMessage([...messages].reverse())
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');
@@ -67,7 +67,7 @@ export default function ProfileChat() {
     <div>
       <h2>Чат с техподдержкой</h2>
       <div className="chat-window">
-        {orderedMessages.map((msg, index) => (
+        {messages.map((msg, index) => (
           <p className='for-message' key={index}>{msg.message}</p>
         ))}
       </div>
