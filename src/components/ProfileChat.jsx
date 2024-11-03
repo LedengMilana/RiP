@@ -28,9 +28,6 @@ export default function ProfileChat() {
 					},
 				});
         setRoomId(roomResponse.data.room_name);
-
-				const initialMessages = roomResponse.data.messages || [];
-				console.log(initialMessages);
 				
       } catch (error) {
         console.error('Ошибка при получении uuid или roomId:', error);
@@ -47,22 +44,17 @@ export default function ProfileChat() {
 
       socket.onmessage = (event) => {
         const messageData = JSON.parse(event.data);
-        setMessages((prevMessages) => [...prevMessages, messageData]);
+        setMessages((prevMessages) => [messageData, ...prevMessages]);
       };
 
       socket.onclose = () => console.log('WebSocket закрыт');
     }
   }, [uuid, roomId]);
 
-	useEffect(() => {
-		setMessages((prevMessages) => {
-				return [...prevMessages].reverse()
-		});
-	}, []);
-
   const sendMessage = () => {
     if (ws && message.trim()) {
       ws.send(JSON.stringify({ message }));
+			window.location.reload()
       setMessage('');
     }
   };
