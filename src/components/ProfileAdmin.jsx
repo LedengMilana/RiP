@@ -55,11 +55,20 @@ export default function ProfileAdmin() {
     setMessages([]);
   };
 
+	useEffect(()=>{
+		console.log(messages)
+		if (messages.length > 0) {
+			const [firstMessage, ...remainingMessages] = messages;
+			if (firstMessage.message === message) {
+				setMessages([...remainingMessages, firstMessage]);
+				setMessage('');
+			}
+		}
+  }, [messages])
+
   const sendMessage = () => {
     if (ws && message.trim()) {
       ws.send(JSON.stringify({ message }));
-			window.location.reload()
-      setMessage('');
     }
   };
 
