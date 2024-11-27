@@ -44,15 +44,16 @@ export default function SignInModal({ onClose }) {
 		// 	setIsSignUp(false);
 		// }
 		try {
-      const response = await axios.post('http://0.0.0.0:8000/api/token/', {
-        username: values.email,
-        password: values.password,
-      });
-      alert('Пользователь зарегистрирован');
-      setIsSignUp(false);
-    } catch (error) {
-      alert('Ошибка регистрации');
-    }
+			const response = await axios.post('http://0.0.0.0:8000/api/v1/register', {
+				username: values.name,
+				email: values.email,
+				password: values.password,
+			});
+			alert('Пользователь успешно зарегистрирован');
+			setIsSignUp(false);
+		} catch (error) {
+			alert('Ошибка регистрации: ' + (error.response?.data?.detail || 'Неизвестная ошибка'));
+		}
 	};
 
 	// Функция входа
